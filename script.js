@@ -5,6 +5,9 @@ const chatbotToggler = document.querySelector('.chatbot-toggler');
 const chatbotCloseBtn = document.querySelector(".close-btn");
 
 let userMessage;
+let userName = "";
+let projectName = "";
+let companyName = "";
 
 //const API_kEY = "YOUR_API_KEY";  // Substitua pela sua chave de API
 
@@ -15,6 +18,11 @@ const createChatLi = (message, className) => {
     let chatContent = className === "continuacao" ? `<p>${message}</p>` : `<img class="manu" src="componets/img/MANU.svg"/><p>${message}</p>`;
     chatLi.innerHTML = chatContent;
     return chatLi;
+}
+
+// Função para rolar a caixa de chat para o final
+const scrollToBottom = () => {
+    chatbox.scrollTop = chatbox.scrollHeight;
 }
 
 /*const generateResponse = () => {
@@ -56,6 +64,48 @@ const createChatLi = (message, className) => {
     }
 }*/
 
+
+// Função para gerar respostas automáticas
+const generateResponse = (message) => {
+    // Remove a mensagem "Digitando..."
+    const typingMessage = document.querySelector('.chat.entrada:last-child');
+    if (typingMessage) typingMessage.remove();
+
+    let responseMessage = "";
+
+    // Lógica para respostas automáticas
+    if (message.toLowerCase().includes("olá") || message.toLowerCase().includes("oi")) {
+        if (userName) {
+            responseMessage = `Olá, ${userName}. Como posso te ajudar hoje?`;
+        } else {
+            responseMessage = "Olá! Qual é o seu nome?";
+        }
+    } else if (userName === "" && !message.toLowerCase().includes("olá") && !message.toLowerCase().includes("oi")) {
+        userName = message;
+        responseMessage = `Prazer em conhecê-lo, ${userName}. Como posso te ajudar hoje?`;
+    } else if (message.toLowerCase().includes("preciso de um relatorio sobre o projeto")) {
+        projectName = message.replace(/preciso de um relatorio sobre o projeto/i, "").trim();
+        responseMessage = `${userName}, para prosseguirmos, informe o nome da empresa parceira.`;
+    } else if (companyName === "" && projectName !== "") {
+        companyName = message;
+        responseMessage = `Acabei de localizar o projeto ${projectName} da empresa ${companyName}.<br>O senhor(a) poderá acessar o relatório clicando no link que estou enviando ou, se preferir, pode baixá-lo.<br>Além do relatório, estou enviando um gráfico que oferece uma visão visual do andamento do projeto, útil para apresentar à sua equipe.`;
+        
+        // Adicionar um "link" e um "gráfico" (GIF) fictício
+        setTimeout(() => {
+            chatbox.appendChild(createChatLi('<a href="#">Baixar Relatório</a>', "entrada"));
+            chatbox.appendChild(createChatLi('<img src="https://via.placeholder.com/150" alt="Gráfico">', "entrada"));
+            chatbox.appendChild(createChatLi("Espero ter lhe ajudado da melhor forma possível. Caso você precise de mais informações, estarei aqui para lhe ajudar.", "entrada"));
+            scrollToBottom();
+        }, 3000);
+    } else {
+        responseMessage = "Desculpe, não entendi. Pode reformular sua pergunta?";
+    }
+    
+    // Anexa a resposta à caixa de bate-papo
+    chatbox.appendChild(createChatLi(responseMessage, "entrada"));
+    scrollToBottom();
+}
+
 const handleChat = () => {
     userMessage = chatInput.value.trim();
     if(!userMessage) return;
@@ -63,11 +113,13 @@ const handleChat = () => {
     // Anexe a mensagem do usuário à caixa de bate-papo  
     chatbox.appendChild(createChatLi (userMessage, "continuacao"));
     chatInput.value =''; //Limpa a área de texto após enviar a mensagem
+    scrollToBottom();
 
     setTimeout(() => {
         //Exibirá a mensagem "pensando..." enquanto aguarda a resposta
         chatbox.appendChild(createChatLi ("Digitando...", "entrada"));
-        generateResponse(entradaChatLi);
+        scrollToBottom();
+        generateResponse(userMessage);
     }, 600);
 }
 
