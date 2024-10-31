@@ -78,7 +78,7 @@ const generateResponse = (message) => {
         if (userName) {
             responseMessage = `Olá, ${userName}. Como posso te ajudar hoje?`;
         } else {
-            responseMessage = "Olá! Qual é o seu nome?";
+            responseMessage = "Olá! Para iniciarmos, informe seu nome.";
         }
     } else if (userName === "" && !message.toLowerCase().includes("olá") && !message.toLowerCase().includes("oi")) {
         userName = message;
@@ -92,8 +92,18 @@ const generateResponse = (message) => {
         
         // Adicionar um "link" e um "gráfico" (GIF) fictício
         setTimeout(() => {
-            chatbox.appendChild(createChatLi('<a href="#">Baixar Relatório</a>', "entrada"));
-            chatbox.appendChild(createChatLi('<img src="https://via.placeholder.com/150" alt="Gráfico">', "entrada"));
+            //criando o link para baixar o relatório
+            const reportLink = '<a href="componets/docs/Relatorio.pdf" download>Baixar Relatório</a>';
+            chatbox.appendChild(createChatLi(reportLink, "entrada"));
+            
+            //criando elemento img
+            const imgElement = document.createElement('img');
+            imgElement.src = "/componets/img/dashboard.svg";
+            imgElement.alt = "Gráfico";
+            imgElement.classList.add("grafico");
+
+            //adicionando o elemento img ao chatbox
+            chatbox.appendChild(createChatLi(imgElement.outerHTML, "entrada"));
             chatbox.appendChild(createChatLi("Espero ter lhe ajudado da melhor forma possível. Caso você precise de mais informações, estarei aqui para lhe ajudar.", "entrada"));
             scrollToBottom();
         }, 3000);

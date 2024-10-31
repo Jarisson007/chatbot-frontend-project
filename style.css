@@ -147,6 +147,12 @@
     margin-bottom: 10px;
 }
 
+.grafico{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .chatbot .chat-input{
     position: absolute;
     bottom: 0;
@@ -188,7 +194,7 @@
 
     .planodefundo{
         width:100%;
-        height:100vh;
+        height:100%;
         background-size: cover;
         background-position: center;
         z-index: 6;
@@ -208,5 +214,10 @@
 
     .chatbot header span{
         display: block;
+    }
+
+    .grafico{
+        width: 100%;
+        height: 100%;
     }
 }
