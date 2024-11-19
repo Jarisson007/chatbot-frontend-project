@@ -89,7 +89,7 @@ body{
     width: 400px;
     height: 440px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, 0.731);
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
@@ -125,7 +125,7 @@ body{
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #04111b;
+    color: #fff;
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -143,7 +143,7 @@ body{
     border: none;
     outline: none;
     font-size: 1em;
-    color:#04111b;
+    color:#fff;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -158,7 +158,7 @@ body{
 
 .remember-forgot{
     font-size: .9rem;
-    color: #04111b;
+    color: #fff;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -166,12 +166,12 @@ body{
 }
 
 .remember-forgot label input {
-    accent-color: #04111b;
+    accent-color: #fff;
     margin-right: 3px;
 }
 
 .remember-forgot a {
-    color: #04111b;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -195,14 +195,14 @@ body{
 
 .login-register{
     font-size: .9em;
-    color: #04111b;
+    color: #fff;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
 .login-register p a {
-    color: #04111b;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
@@ -213,6 +213,8 @@ body{
 
 
 /*final da nova tela de login*/
+
+
 
 .show-chatbot .chatbot-toggler{
     transform: rotate(90deg);
