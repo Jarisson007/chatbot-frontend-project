@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página do Administrador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/pagadm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <script src="../chat-boot/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logofacilit"><a href="#"><img src="/components/assets/img/facilitlogo.png" alt="Logo da empresa" style="height: 50px; width: auto;"></a></div>
+            <ul class="links"> 
+                <li><a href="funcionalidades">Funcionalidades</a></li>
+                <li><a href="clientes">Clientes</a></li>
+                <li><a href="parceiros">Parceiros</a></li>
+                <li><a href="blog">Blog</a></li>
+            </ul>
+            <a href="#" class="action_btn">Fale Conosco</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="funcionalidades">Funcionalidades</a></li>
+            <li><a href="clientes">Clientes</a></li>
+            <li><a href="parceiros">Parceiros</a></li>
+            <li><a href="blog">Blog</a></li> 
+            <li><a href="#" class="action_btn">Fale Conosco</a></li>
+        </div>
+    </header>
+    <br><br>
+
+    <button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span> 
+    </button>
+
+
+    <main>
+    <!--    <section id="hero">
+            <h1>Bem-vindo à Página do Administrador</h1>
+            <p>Aqui você possui acesso a todas pesquisadas mais realizadas na Muan!</p>
+        </section> -->
+    </main>
+
+    <!-- Interface de Monitoramento -->
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Bem-vindo à Página do Administrador</span> <!-- Aqui colocar uma logica pra dar bem vindo ao nome do usuario que acessou-->
+                <h2>Relatórios</h2> <!-- aqui não sei o que inserir-->
+            </div>
+            <div class="user--info">
+                <div class="search--box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Pesquisar">
+                </div>
+                <img src="/components/assets/img/perfil-de-usuario.png" alt="">
+                <button onclick="logout()" class="admin-access-btn2">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card--container">
+        <h3 class="main--title">Monitoramento de uso de IA</h3>
+        <p class="main--texto"> Taxa de conversão de dolar para real: R$5.09</p>
+        <br>
+        <div class="card--wrapper">
+            <div class="payment--card">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">
+                        Custo total</span>
+                        <span class="amount--value">R$4.17</span>
+                    </div>
+                    <i class="fas fa-dollar-sign icon"></i>
+                </div>
+                <span class="card-detail">*** *** *** 348</span>
+            </div>
+
+            <div class="payment--card">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">
+                        Quantidade de usuários</span>
+                        <span class="amount--value">18</span>
+                    </div>
+                    <i class="fas fa-users icon"></i>
+                </div>
+                <span class="card-detail">*** *** *** 348</span>
+            </div>
+
+            <div class="payment--card">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">
+                        Custo médio por usuário</span>
+                        <span class="amount--value">R$0.23</span>
+                    </div>
+                    <i class="fas fa-list icon"></i>
+                </div>
+                <span class="card-detail">*** *** *** 348</span>
+            </div>
+        </div>
+    </div>
+
+    <!--MONITORAMENTO POR TABELA-->
+    <div class="tabular-wrapper">
+        <h3 class="main--title2">Monitoramento Detalhado</h3> <br>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Email</th>
+                        <th>Função</th>
+                        <th>Conversa</th>
+                        <th>Modelo</th>
+                        <th>Custo R$</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fernanda</td>
+                            <td>Fernanda@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: projeto "Open"</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+                        <tr>
+                            <td>Rubens</td>
+                            <td>rubens@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: projeto "Open"</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+                        <tr>
+                            <td>Fernanda</td>
+                            <td>fernanda@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: andamento do projeto "Open"</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+                        <tr>
+                            <td>Jonas</td>
+                            <td>jonas@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: O que é facilit?</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+                        <tr>
+                            <td>Vinicius</td>
+                            <td>vinicius@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: projeto "Open"</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+                        <tr>
+                            <td>Gabriel</td>
+                            <td>gabriel@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: O que é facilit?</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+                        <tr>
+                            <td>Larissa</td>
+                            <td>larissa@facilit.com</td>
+                            <td>Manu</td>
+                            <td>"user: projeto "Open"</td>
+                            <td>gpt-3.5-turbo-0125</td>
+                            <td>0.005</td>
+                            <td>2024-10-0T13:03:10.142651</td>
+                        </tr>
+
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- DASHBOARD EM DISCO E GRAFICO-->
+     <div class="graphBox">
+        <div class="box">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="box">
+            <canvas id="earning"></canvas>
+        </div>
+     </div>
+
+
+
+    <script>
+        function logout() {
+            window.location.href = '/components/pages/chat-boot/index.html';
+        }
+    </script>
+
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn');
+        const toggleBtnIcon = document.querySelector('.toggle_btn i');
+        const dropDownMenu = document.querySelector('.dropdown_menu');
+
+        toggleBtn.onclick = function (){
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+
+            toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars';
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+    <script src="./js/my_chart.js"></script>
+
+    <!-- script para buscar o nome do usuario -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtém o e-mail do usuário do localStorage
+            const userEmail = localStorage.getItem('userEmail');
+    
+            // Define um mapeamento de e-mail para nome
+            const userNames = {
+                "joao@facilit.com": "João",
+                "gabriela@facilit.com": "Gabriela"
+            };
+    
+            // Obtém o nome do usuário a partir do e-mail
+            const userName = userNames[userEmail] || "Usuário";
+    
+            // Atualiza a mensagem de boas-vindas
+            const welcomeMessage = `Bem-vindo(a), ${userName}, à página do administrador.`;
+            document.querySelector('.header--title span').textContent = welcomeMessage;
+        });
+    </script>
+
+    <!-- Chatbot HTML -->
+    <div class="chatbot" id="chatbox">
+        <header class="header">
+            <img src="/components/assets/img/MANU.png" alt="Logo Chatbot"/>
+            <h2>Manu</h2>
+            <span class="close-btn material-symbols-outlined">close</span> 
+        </header>
+        <ul class="chatbox">
+            <li class="chat entrada messageTime">
+                <p>Olá 👋 <br>Como posso te ajudar hoje?</p>
+                <span id="current-time" class="time"></span>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea id="chatInput" placeholder="Digite uma mensagem..." required></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+</body>
+</html>

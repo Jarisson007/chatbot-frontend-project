@@ -1,0 +1,14 @@
+[
+    {
+        "keywords": ["projeto", "criar projeto"],
+        "response": "Para criar um projeto, acesse a aba de projetos e clique em 'Novo Projeto'."
+    },
+    {
+        "keywords": ["empresa", "sobre empresa"],
+        "response": "Nossa empresa é líder em inovação e tecnologia."
+    },
+    {
+        "keywords": ["relatório", "gerar relatório"],
+        "response": "Para gerar um relatório, vá até a seção de relatórios e escolha o tipo desejado."
+    }
+]
